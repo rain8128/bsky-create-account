@@ -19,6 +19,7 @@ window.onload = (d)=>{
     xhr.onreadychange = () => {
       if(xhr.readystate == XMLHttpReqest.DONE){
         d.getElementById("respMessage").innerText = xhr.responsText
-    }
+      }
+    };
   };
-}
+};
