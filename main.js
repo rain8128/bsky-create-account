@@ -1,6 +1,9 @@
 window.onload = (d)=>{
   d = document;
   let btn = d.getElementById("create");
+  d.getElementById("form").onsubmit = (e)=>{
+    e.PreventDefault();
+  }
   btn.onclick = ()=>{
     let handle = d.getElementById("name").value;
     let email = d.getElementById("email").value;
