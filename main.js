@@ -27,6 +27,7 @@ window.onload = (d)=>{
         mes.innerText = "OK";
       }else{
         mes.innerText = "error! \n"+resp.body
-      });
+      }
+    });
   };
 };
