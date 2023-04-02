@@ -12,14 +12,18 @@ window.onload = (d)=>{
     if(inviteCode){
       m.inviteCode = inviteCode;
     }
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST","https://bsky.social/xrpc/com.atproto.server.createAccount");
-    xhr.setRequestHeader("Content-Type","application/json");
-    xhr.send(JSON.stringify(m));
-    xhr.onreadychange = () => {
-      if(xhr.readystate == XMLHttpReqest.DONE){
-        d.getElementById("respMessage").innerText = xhr.responsText
+    let mes = d.getElementById("respMessage");
+    fetch("https://bsky.social/xrpc/com.atproto.server.createAccount",{
+      method:"POST",
+      body:m,
+      headers:{
+        "Content-Type":"application/json"
       }
-    };
+    }).then(resp => {
+      if(resp.ok){
+        mes.innerText = "OK";
+      }else{
+        mes.innerText = "error! \n"+resp.body
+      });
   };
 };
