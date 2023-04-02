@@ -2,7 +2,7 @@ window.onload = (d)=>{
   d = document;
   let btn = d.getElementById("create");
   d.getElementById("form").onsubmit = (e)=>{
-    e.PreventDefault();
+    e.preventDefault();
   }
   btn.onclick = ()=>{
     let handle = d.getElementById("name").value;
