@@ -13,7 +13,7 @@ window.onload = (d)=>{
       m.inviteCode = inviteCode;
     }
     let xhr = new XMLHttpRequest();
-    xhr.open("POST","https://bsky.social/xrpc/com.atproto.account.create");
+    xhr.open("POST","https://bsky.social/xrpc/com.atproto.server.createAccount");
     xhr.setRequestHeader("Content-Type","application/json");
     xhr.send(JSON.stringify(m));
     xhr.onreadychange = () => {
