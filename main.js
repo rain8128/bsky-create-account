@@ -16,7 +16,7 @@ window.onload = (d)=>{
     let mes = d.getElementById("respMessage");
     fetch("https://bsky.social/xrpc/com.atproto.server.createAccount",{
       method:"POST",
-      body:m,
+      body:JSON.stringify(m),
       headers:{
         "Content-Type":"application/json"
       }
