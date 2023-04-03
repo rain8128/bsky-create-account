@@ -27,7 +27,6 @@ window.onload = (d)=>{
         return resp.text()
       }).then(text=>{
         mes.innerText = "error! \n"+text;
-      }
     });
     return false;
   };
