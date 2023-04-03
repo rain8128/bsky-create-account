@@ -2,10 +2,7 @@ window.onload = (d)=>{
   d = document;
   let btn = d.getElementById("create");
   d.getElementById("form").onsubmit = (e)=>{
-//     e.preventDefault();
-    return false;
-  }
-  btn.onclick = ()=>{
+    e.preventDefault();
     let handle = d.getElementById("name").value;
     let email = d.getElementById("email").value;
     let password = d.getElementById("password").value;
@@ -27,8 +24,11 @@ window.onload = (d)=>{
       if(resp.ok){
         mes.innerText = "OK";
       }else{
-        mes.innerText = "error! \n"+resp.body
+        return resp.text()
+      }).then(text=>{
+        mes.innerText = "error! \n"+text;
       }
     });
+    return false;
   };
 };
