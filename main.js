@@ -25,7 +25,8 @@ window.onload = (d)=>{
         mes.innerText = "OK";
       }else{
         return resp.text()
-      }).then(text=>{
+      }
+    }).then(text=>{
         mes.innerText = "error! \n"+text;
     });
     return false;
